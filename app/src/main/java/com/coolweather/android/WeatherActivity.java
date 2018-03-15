@@ -77,7 +77,7 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
-//        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 //        String weatherString = prefs.getString("weather", null);
         final String weatherId;
 //        if (weatherString != null) {
@@ -97,12 +97,12 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
-//        String bingPic = prefs.getString("bing_pic", null);
-//        if(bingPic != null){
-//            Glide.with(this).load(bingPic).into(bingPicImg);
-//        }else {
-            //loadBingPic();
-        //}
+        String bingPic = prefs.getString("bing_pic", null);
+        if(bingPic != null){
+            Glide.with(this).load(bingPic).into(bingPicImg);
+        }else {
+            loadBingPic();
+        }
     }
 
     public void requestWeather(final String weatherId) {
@@ -145,7 +145,7 @@ public class WeatherActivity extends AppCompatActivity {
 
             }
         });
-        //loadBingPic();
+        loadBingPic();
     }
 
     private void showWeatherInfo(Weather weather) {
